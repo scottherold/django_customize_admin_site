@@ -11,9 +11,12 @@ class MovieAdmin(admin.ModelAdmin):
         site.
         search (list): A list of searchable fields for the model on the admin
         site.
+        list_filter (list): Fields that a Movie can be filtered on the admin
+        site.
     """
     fields = ['release_year', 'title', 'length']
     search_fields = ['title','length']
+    list_filter = ['release_year', 'length']
 
 admin.site.register(models.Customer)
 admin.site.register(models.Movie, MovieAdmin)
